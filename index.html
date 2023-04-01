@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="nav.css">
+</head>
+<body>
+    <nav>
+       <a href="https://vjit.ac.in/"> <img src="logo.png" alt="vjit logo" class="logo"></a>
+    </nav>
+    <div class='home'>
+        
+        
+            <h1  class='home-heading' ><b>Student Course Registration Form</b></h1>
+        <!-- <form method="post" autocomplete="on" name="google-sheet"> -->
+            <input id="name" type="text" value="" name="fullname" placeholder="fullname" /><br /><br />
+            <input id="studentId" type="text" value="" name="StudentId" placeholder="studentId"  /><br /><br />
+            <input id="email" type="email" value="" name="email" placeholder="email"   /><br /><br />
+            
+            
+            
+            <h4>Branch:</h4>    
+        <label for="menu1"></label>
+        <select id="menu1">
+            <option value="">SELECT</option>
+            <option value="AI">AI</option>
+            <option value="AI&DS">AI&DS</option>
+            <option value="CSE">CSE</option>
+            <option value="CSE(AI&ML)">CSE(AI&ML)</option>
+            <option value="CSE(DS)">CSE(DS)</option>
+            <option value="IT">IT</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="MECH">MECH</option>
+            <option value="CIVIL">CIVIL</option>
+        </select>
+        <h4>Section:</h4>
+        <label for="menu2"></label>
+        <select id="menu2">
+            <option value="">SELECT</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+        </select>
+        <br><br>
+        <button id="btn" onclick="redirectToPage()">submit</button>
+    
+    <script>
+        
+      
+            function redirectToPage() {
+                var menu1Value = document.getElementById("menu1").value;
+                var menu2Value = document.getElementById("menu2").value;
+                var redirectUrl = "";
+    
+                // Based on the selected options, set the redirect URL
+                if (menu1Value === "AI" ) {
+                    redirectUrl = "ai.html";
+                } else if (menu1Value === "AI&DS" ) {
+                    redirectUrl = "ai&ds.html";
+                } else if (menu1Value === "CSE") {
+                    redirectUrl = "cse.html";
+                }else if (menu1Value === "CSE(AI&ML)") {
+                    redirectUrl = "cse(ai&ml).html";
+                }else if (menu1Value === "CSE(DS)") {
+                    redirectUrl = "cse(ds).html";
+                }else if (menu1Value === "IT") {
+                    redirectUrl = "it.html";
+                }else if (menu1Value === "ECE") {
+                    redirectUrl = "ece.html";
+                }else if (menu1Value === "EEE") {
+                    redirectUrl = "eee.html";
+                }else if (menu1Value === "MECH") {
+                    redirectUrl = "mech.html";
+                }else if (menu1Value === "CIVIL") {
+                    redirectUrl = "civil.html";
+                }
+    
+                // If a redirect URL is set, redirect to that page
+                if (redirectUrl !== "") {
+                    window.location.href = redirectUrl;
+                }
+            }
+        </script>
+        <script>
+            function enableButton() {
+  // Get all the input and dropdown elements
+  const input1 = document.getElementById("name");
+  const input2 = document.getElementById("studentId");
+  const input3 = document.getElementById("email");
+  const dropdown1 = document.getElementById("menu1");
+  const dropdown2 = document.getElementById("menu2");
+  const button = document.getElementById("btn");
+
+  // Check if all inputs and dropdowns have a value selected
+  if (
+    input1.value !== "" &&
+    input2.value !== "" &&
+    input3.value !== "" &&
+    dropdown1.value !== "" &&
+    dropdown2.value !== ""
+  ) {
+    // If all inputs and dropdowns have a value, enable the button
+    button.disabled = false;
+  } else {
+    // Otherwise, disable the button
+    button.disabled = true;
+  }
+}
+
+// Attach the enableButton function to the change event of all inputs and dropdowns
+document.getElementById("name").addEventListener("change", enableButton);
+document.getElementById("studentId").addEventListener("change", enableButton);
+document.getElementById("email").addEventListener("change", enableButton);
+document.getElementById("menu1").addEventListener("change", enableButton);
+document.getElementById("menu2").addEventListener("change", enableButton);
+        </script>
+        <!-- </form> -->
+        
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>
